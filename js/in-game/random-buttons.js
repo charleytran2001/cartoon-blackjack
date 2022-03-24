@@ -11,3 +11,7 @@ buttonRNG();
 document.getElementById("hit").src = "./images/button-images/hit" + buttonPicker + ".png";
 buttonRNG();
 document.getElementById("stand").src = "./images/button-images/stand" + buttonPicker + ".png";
+buttonRNG();
+document.getElementById("double-down").src = "./images/button-images/double-down" + buttonPicker + ".png";
+buttonRNG();
+document.getElementById("surrender").src = "./images/button-images/surrender" + buttonPicker + ".png";

@@ -23,10 +23,15 @@
     margin: auto 1% auto 1%;
 }
 
-#hit, #stand {
+#in-game-controls img {
+    cursor: pointer;
+    margin-right: 0.2%;
+}
+
+/* #hit, #stand, #double-down, #surrender {
     cursor: pointer;
     margin-right: 1%;
-}
+} */
 
 a {
     margin-right: 1%;

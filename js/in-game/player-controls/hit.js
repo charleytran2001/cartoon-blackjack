@@ -23,7 +23,7 @@ function hit() {
     if(playerSoftHandTotal > 21) {
         playerAceTotal = playerHardHandTotal;
     }
-    document.getElementById("player-total").innerHTML = "TOTAL: " + playerAceTotal;
+    document.getElementById("player-total").innerHTML = "PLAYER TOTAL: " + playerAceTotal;
 
     if(playerAceTotal === 21) {
         document.getElementById("hit").style.filter = "grayscale(100%)";

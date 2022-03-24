@@ -1,6 +1,8 @@
 function stand() {
     document.getElementById("hit").hidden = true;
     document.getElementById("stand").hidden = true;
+    document.getElementById("double-down").hidden = true;
+    document.getElementById("surrender").hidden = true;
     // document.getElementById("menu").hidden = false;
     document.getElementById("restart").hidden = false;
     
@@ -16,7 +18,7 @@ function stand() {
 
     console.log(dealerCardCounter);
 
-    document.getElementById("dealer-total").innerHTML = "TOTAL: " + dealerAceTotal;
+    document.getElementById("dealer-total").innerHTML = "DEALER TOTAL: " + dealerAceTotal;
 
     // Checks for Blackjack
     if(playerAceTotal === 21 && dealerAceTotal === 21) {
@@ -60,7 +62,7 @@ function stand() {
         document.getElementById("status").innerHTML = "IT'S A TIE";
     }
 
-    document.getElementById("dealer-total").innerHTML = "TOTAL: " + dealerAceTotal;
+    document.getElementById("dealer-total").innerHTML = "DEALER TOTAL: " + dealerAceTotal;
 
     if(dealerAceTotal > 21) {
         document.getElementById("dealer-total").style.color = "red";

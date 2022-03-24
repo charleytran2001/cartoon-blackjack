@@ -26,5 +26,5 @@ function dealerHit() {
         dealerAceTotal = dealerHardHandTotal;
     }
 
-    document.getElementById("dealer-total").innerHTML = "TOTAL: ???";
+    document.getElementById("dealer-total").innerHTML = "DEALER TOTAL: ???";
 }
