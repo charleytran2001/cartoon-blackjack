@@ -1,5 +1,5 @@
 function startGame() {
-    newDeck();
+    deck = newDeck();
     playerStartingHand();
     dealerStartingHand();
 }

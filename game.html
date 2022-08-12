@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack 2.0</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contains Blackjack Game -->
+    <div id="game-container">
+        <!-- Player Row -->
+        <div id="player-row">
+            <p id="player-total"></p>
+            <div id="player-cards"></div>
+        </div>
+
+        <!-- In-game Controls -->
+        <div id="in-game-controls">
+            <img alt="Hit" onclick="hit()" id="hit">
+            <img alt="Stand" onclick="stand()" id="stand">
+            <img alt="Double Down" onclick="doubleDown()" id="double-down">
+            <img alt="Surrender" onclick="surrender()" id="surrender">
+            <!-- <a href="./start.html"><img src="../Images/Menu.png" alt="Menu" id="menu" hidden></a> -->
+            <a href="./index.html"><img src="./images/button-images/restart.png" alt="Restart" id="restart" hidden></a>
+            <p id="status"></p>
+        </div>
+
+        <!-- Dealer Row -->
+        <div id="dealer-row">
+            <div id="dealer-cards"></div>
+            <p id="dealer-total"></p>
+        </div>
+    </div>
+
+    <script src="./js/in-game/card-variables.js"></script>
+    <script src="./js/in-game/random-buttons.js"></script>
+    <script src="./js/in-game/create-deck.js"></script>
+    <script src="./js/in-game/create-cards.js"></script>
+    <script src="./js/in-game/dealer-hit.js"></script>
+    <script src="./js/in-game/player-controls/hit.js"></script>
+    <script src="./js/in-game/player-controls/stand.js"></script>
+    <script src="./js/in-game/start.js"></script>
+</body>
+</html>
