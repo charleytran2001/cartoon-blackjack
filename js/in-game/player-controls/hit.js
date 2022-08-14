@@ -27,24 +27,48 @@ function hit() {
 
     if(playerAceTotal === 21) {
         document.getElementById("hit").style.filter = "grayscale(100%)";
-        document.getElementById("hit").style.cursor = "default";
-        document.getElementById("hit").onclick = null;
+        document.getElementById("hit").style.cursor = "not-allowed";
+        document.querySelector("#hit").removeEventListener("click", hit);
+        document.querySelector("#double-down").style.filter = "grayscale(100%)";
+        document.querySelector("#double-down").style.cursor = "not-allowed";
+        document.querySelector("#double-down").removeEventListener("click", doubleDown);
+        document.querySelector("#surrender").style.filter = "grayscale(100%)";
+        document.querySelector("#surrender").style.cursor = "not-allowed";
+        document.querySelector("#surrender").removeEventListener("click", surrender);
     } else if(playerAceTotal > 21) {
         document.getElementById("hit").style.filter = "grayscale(100%)";
-        document.getElementById("hit").style.cursor = "default";
-        document.getElementById("hit").onclick = null;
+        document.getElementById("hit").style.cursor = "not-allowed";
+        document.querySelector("#hit").removeEventListener("click", hit);
+        document.querySelector("#double-down").style.filter = "grayscale(100%)";
+        document.querySelector("#double-down").style.cursor = "not-allowed";
+        document.querySelector("#double-down").removeEventListener("click", doubleDown);
+        document.querySelector("#surrender").style.filter = "grayscale(100%)";
+        document.querySelector("#surrender").style.cursor = "not-allowed";
+        document.querySelector("#surrender").removeEventListener("click", surrender);
         document.getElementById("player-total").style.color = "red";
+    }
+
+    if(playerCardCounter > 2) {
+        document.querySelector("#double-down").style.filter = "grayscale(100%)";
+        document.querySelector("#double-down").style.cursor = "not-allowed";
+        document.querySelector("#double-down").removeEventListener("click", doubleDown);
+        document.querySelector("#surrender").style.filter = "grayscale(100%)";
+        document.querySelector("#surrender").style.cursor = "not-allowed";
+        document.querySelector("#surrender").removeEventListener("click", surrender);
     }
 
     if(playerCardCounter === 6) {
         document.getElementById("hit").style.filter = "grayscale(100%)";
-        document.getElementById("hit").style.cursor = "default";
-        document.getElementById("hit").onclick = null;
-        document.getElementById("hit").disabled = true;
+        document.getElementById("hit").style.cursor = "not-allowed";
+        document.querySelector("#hit").removeEventListener("click", hit);;
     }
 
+    /*
     // Runs until dealer's hand is 17 or more
     if(dealerAceTotal < 17) {
         dealerHit();
     }
+    */
 }
+
+document.querySelector("#hit").addEventListener("click", hit);

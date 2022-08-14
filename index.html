@@ -8,8 +8,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>Welcome to Blackjack!</p>
-    <p>Place Your Bets Here</p>
-    <a href="./game.html">Start</a>
+    <div id="homePage">
+            <p>Welcome to Blackjack!</p>
+            <p>Place Your Bets Here</p>
+            <p id="currentMoney">Current Money: $100</p>
+            <input type="number" id="currentBet" value="10">
+            <button id="startButton">Start Game</button>
+    </div>
+
+    <div id="gamePage" hidden>
+        <!-- Contains Blackjack Game -->
+        <div id="game-container">
+            <!-- Player Row -->
+            <div id="player-row">
+                <p id="player-total"></p>
+                <div id="player-cards"></div>
+            </div>
+        
+            <!-- In-game Controls -->
+            <div id="in-game-controls">
+                <img alt="Hit" id="hit">
+                <img alt="Stand" onclick="stand()" id="stand">
+                <img alt="Double Down" id="double-down">
+                <img alt="Surrender" id="surrender">
+                <img src="./images/button-images/restart.png" alt="Restart" id="restartButton" hidden>
+                <p id="status"></p>
+            </div>
+        
+            <!-- Dealer Row -->
+            <div id="dealer-row">
+                <div id="dealer-cards"></div>
+                <p id="dealer-total"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/in-game/card-variables.js"></script>
+    <script src="./js/in-game/random-buttons.js"></script>
+    <script src="./js/in-game/create-deck.js"></script>
+    <script src="./js/in-game/create-cards.js"></script>
+    <script src="./js/in-game/dealer-hit.js"></script>
+    <script src="./js/in-game/player-controls/hit.js"></script>
+    <script src="./js/in-game/player-controls/stand.js"></script>
+    <script src="./js/in-game/start.js"></script>
+    
+    <script src="./js/money.js"></script>
+    <script src="./js/page-switch.js"></script>
+    <script src="./js/reset.js"></script>
 </body>
 </html>

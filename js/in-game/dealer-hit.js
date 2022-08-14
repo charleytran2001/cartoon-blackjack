@@ -6,6 +6,10 @@ function dealerHit() {
     document.getElementById("dealer-cards").appendChild(imageBox);
     document.getElementById("dealer-cards").appendChild(backBox);
 
+    if(dealerCardCounter === 1) {
+        dealerFirstCard = currentCardValue;
+    }
+
     if(currentCardValue === "A") {
         dealerSoftHandTotal += 11;
         if(dealerSoftHandTotal > 21) {
@@ -26,5 +30,6 @@ function dealerHit() {
         dealerAceTotal = dealerHardHandTotal;
     }
 
-    document.getElementById("dealer-total").innerHTML = "DEALER TOTAL: ???";
+    // document.getElementById("dealer-total").innerHTML = "DEALER TOTAL: ???";
+    document.querySelector("#dealer-total").innerText = `DEALER TOTAL: ${dealerFirstCard}, ?`
 }

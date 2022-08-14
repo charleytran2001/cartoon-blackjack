@@ -13,3 +13,4 @@ var dealerHardHandTotal = 0;
 var dealerSoftHandTotal = 0;
 var dealerAceTotal;
 var dealerCardCounter = 0;
+let dealerFirstCard;

@@ -7,11 +7,11 @@
 #game-container {
     display: flex;
     flex-direction: column;
-    margin: 5%;
+    margin: 1% 2.5%;
 }
 
-#player-cards, #dealer-cards {
-    margin: 1% 0% 1% 0%;
+#player-cards img, #dealer-cards img{
+    margin: 1% 0.25% 1% 0.25%;
 }
 
 #in-game-controls {
@@ -25,7 +25,7 @@
 
 #in-game-controls img {
     cursor: pointer;
-    margin-right: 0.2%;
+    margin: 0 0.2%;
 }
 
 /* #hit, #stand, #double-down, #surrender {
@@ -40,4 +40,13 @@ a {
 p {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: xx-large;
+}
+
+img {
+    /* user-drag: none; */
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
