@@ -85,10 +85,10 @@ function stand() {
         document.getElementById("status").innerHTML = "DEALER 21: YOU LOSE";
         playerMoney -= currentBet;
 
-    } else if(playerAceTotal > 21 && dealerAceTotal > 21) {
-        document.getElementById("status").innerHTML = "BUST: TIE";
-
     // Checks if user busted
+    } else if(playerAceTotal > 21 && dealerAceTotal > 21) {
+        document.getElementById("status").innerHTML = "DOUBLE BUST: YOU LOSE";
+        playerMoney -= currentBet;
     } else if(playerAceTotal > 21) {
         document.getElementById("status").innerHTML = "BUST: YOU LOSE";
         playerMoney -= currentBet;
