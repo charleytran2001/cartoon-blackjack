@@ -10,7 +10,7 @@ function stand() {
     // playerAceTotal = 21;
     // playerSoftHandTotal = 21;
     // playerHardHandTotal = 11;
-    // playerCardCounter = 3;
+    // playerCardCounter = 7;
     
     // dealerAceTotal = 21;
     // dealerSoftHandTotal = 21;
@@ -38,10 +38,30 @@ function stand() {
 
     document.getElementById("dealer-total").innerHTML = "DEALER TOTAL: " + dealerAceTotal;
 
+    // Checks for 7-Card Charlie
+    if(playerCardCounter === 7 && playerAceTotal <= 21 && dealerCardCounter === 7 && dealerAceTotal <= 21) {
+        if(playerAceTotal === dealerAceTotal) {
+            document.getElementById("status").innerHTML = "DOUBLE 7-CARD CHARLIE - YOU WIN";
+            playerMoney += currentBet;
+        } else if(playerAceTotal > dealerAceTotal) {
+            document.getElementById("status").innerHTML = "DOUBLE 7-CARD CHARLIE - YOU HAVE THE LARGER HAND: YOU WIN";
+            playerMoney += currentBet;
+        } else if(dealerAceTotal > playerAceTotal) {
+            document.getElementById("status").innerHTML = "DOUBLE 7-CARD CHARLIE - THE DEALER HAS THE LARGER HAND: YOU LOSE";
+            playerMoney -= currentBet;
+        }
+    } else if(playerCardCounter === 7 && playerAceTotal <= 21) {
+        document.getElementById("status").innerHTML = "7-CARD CHARLIE: YOU WIN";
+        playerMoney += currentBet;
+    } else if(dealerCardCounter === 7 && dealerAceTotal <= 21) {
+        document.getElementById("status").innerHTML = "DEALER 7-CARD CHARLIE: YOU LOSE";
+        playerMoney -= currentBet;
+
     // Checks for Blackjack
-    if(playerAceTotal === 21 && dealerAceTotal === 21 && playerCardCounter === 2 && dealerCardCounter === 2) {
+    } else if(playerAceTotal === 21 && dealerAceTotal === 21 && playerCardCounter === 2 && dealerCardCounter === 2) {
         document.getElementById("status").innerHTML = "DOUBLE BLACKJACK: TIE";
-        // Blackjack vs. 21
+
+    // Blackjack vs. 21
     } else if (playerAceTotal === 21 && dealerAceTotal === 21 && playerCardCounter === 2 && dealerCardCounter > 2) {
         document.getElementById("status").innerHTML = "BLACKJACK BEATS DEALER 21: YOU WIN";
         playerMoney += (currentBet * 1.5);
@@ -55,7 +75,7 @@ function stand() {
         document.getElementById("status").innerHTML = "DEALER BLACKJACK: YOU LOSE";
         playerMoney -= currentBet;
 
-        // Checks for 21
+    // Checks for 21
     } else if(playerAceTotal === 21 && dealerAceTotal === 21) {
         document.getElementById("status").innerHTML = "DOUBLE 21: TIE";
     } else if(playerAceTotal === 21) {
@@ -65,39 +85,20 @@ function stand() {
         document.getElementById("status").innerHTML = "DEALER 21: YOU LOSE";
         playerMoney -= currentBet;
 
-        // Checks for Charlie
-    } else if(playerCardCounter === 6 && playerAceTotal <= 21 && dealerCardCounter === 6 && dealerAceTotal <= 21) {
-        if(playerAceTotal === dealerAceTotal) {
-            document.getElementById("status").innerHTML = "DOUBLE 6-CARD CHARLIE - YOU WIN";
-            playerMoney += currentBet;
-        } else if(playerAceTotal > dealerAceTotal) {
-            document.getElementById("status").innerHTML = "DOUBLE 6-CARD CHARLIE - YOU HAVE THE LARGER HAND: YOU WIN";
-            playerMoney += currentBet;
-        } else if(dealerAceTotal > playerAceTotal) {
-            document.getElementById("status").innerHTML = "DOUBLE 6-CARD CHARLIE - THE DEALER HAS THE LARGER HAND: YOU LOSE";
-            playerMoney -= currentBet;
-        }
-    } else if(playerCardCounter === 6 && playerAceTotal <= 21) {
-        document.getElementById("status").innerHTML = "6-CARD CHARLIE: YOU WIN";
-        playerMoney += currentBet;
-    } else if(dealerCardCounter === 6 && dealerAceTotal <= 21) {
-        document.getElementById("status").innerHTML = "DEALER 6-CARD CHARLIE: YOU LOSE";
-        playerMoney -= currentBet;
-
     } else if(playerAceTotal > 21 && dealerAceTotal > 21) {
         document.getElementById("status").innerHTML = "BUST: TIE";
 
-        // Checks if user busted
+    // Checks if user busted
     } else if(playerAceTotal > 21) {
         document.getElementById("status").innerHTML = "BUST: YOU LOSE";
         playerMoney -= currentBet;
 
-        // Checks if dealer busted
+    // Checks if dealer busted
     } else if(dealerAceTotal > 21) {
         document.getElementById("status").innerHTML = "DEALER BUST: YOU WIN";
         playerMoney += currentBet;
 
-        // Checks for victor
+    // Checks for victor
     } else if(playerAceTotal > dealerAceTotal) {
         document.getElementById("status").innerHTML = "YOU WIN";
         playerMoney += currentBet;
