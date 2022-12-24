@@ -23,6 +23,6 @@ startButton.addEventListener("click", () => {
 });
 
 restartButton.addEventListener("click", () => {
-    document.querySelector("#currentMoney").innerText = `Current Money: $${playerMoney}`;
+    document.querySelector("#currentMoney").innerText = `Current Balance: $${playerMoney}`;
     currentBet = 0;
 });

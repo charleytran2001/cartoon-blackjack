@@ -50,3 +50,12 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+#homePage {
+    text-align: center;
+    margin: 2.5%;
+}
+
+#homePage p {
+    margin: 1%;
+}
