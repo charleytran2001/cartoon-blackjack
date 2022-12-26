@@ -17,12 +17,15 @@ let surrender = () => {
 
 startButton.addEventListener("click", () => {
     currentBet = document.querySelector("#currentBet").valueAsNumber;
+    currentBet = Math.ceil(currentBet * 100) / 100;
     document.querySelector("#hit").addEventListener("click", hit);
     document.querySelector("#double-down").addEventListener("click", doubleDown);
     document.querySelector("#surrender").addEventListener("click", surrender);
 });
 
 restartButton.addEventListener("click", () => {
+    // playerMoney = Math.round(playerMoney * 100) / 100;
+    playerMoney = Number(playerMoney.toFixed(2));
     document.querySelector("#currentMoney").innerText = `Current Balance: $${playerMoney}`;
     currentBet = 0;
 });

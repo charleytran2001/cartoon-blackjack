@@ -63,10 +63,10 @@ function stand() {
 
     // Blackjack vs. 21
     } else if (playerAceTotal === 21 && dealerAceTotal === 21 && playerCardCounter === 2 && dealerCardCounter > 2) {
-        document.getElementById("status").innerHTML = "BLACKJACK BEATS DEALER 21: YOU WIN";
+        document.getElementById("status").innerHTML = "YOUR BLACKJACK BEATS DEALER 21: YOU WIN";
         playerMoney += (currentBet * 1.5);
     } else if (playerAceTotal === 21 && dealerAceTotal === 21 && playerCardCounter > 2 && dealerCardCounter === 2) {
-        document.getElementById("status").innerHTML = "DEALER BLACKJACK BEATS 21: YOU LOSE";
+        document.getElementById("status").innerHTML = "DEALER BLACKJACK BEATS YOUR 21: YOU LOSE";
         playerMoney -= currentBet;
     } else if(playerAceTotal === 21 && playerCardCounter === 2) {
         document.getElementById("status").innerHTML = "BLACKJACK: YOU WIN";
