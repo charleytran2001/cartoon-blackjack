@@ -15,4 +15,8 @@ restartButton.addEventListener("click", () => {
     gamePage.style.display = "none";
 
     reset();
+    
+    if(playerMoney <= 0) {
+        gameover();
+    }
 });
